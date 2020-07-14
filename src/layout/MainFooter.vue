@@ -30,7 +30,7 @@
         </ul>
       </nav> -->
       <div class="copyright">
-        &copy; {{ year }}, feito por robês, executado
+        &copy; {{ year }}, feito por robôs e executado por
         <a href="https://instagram.com/felipenovax" target="_blank"
           >@Felipenovax</a
         >

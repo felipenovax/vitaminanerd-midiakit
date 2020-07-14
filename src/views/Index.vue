@@ -7,7 +7,7 @@
             <div class="brand">
               <h1>Vitamina Nerd</h1>
               <h3>
-                Midia Kit atualizado {{ actualyMonth }} / {{ actualyYear }}.
+                Midia Kit atualizado {{ actualyMonth }} / {{ actualyYear }}
               </h3>
             </div>
           </div>
@@ -19,7 +19,20 @@
         <div class="container">
           <div class="title">
             <h2>Quem somos?</h2>
+            <div class="title">
+              <h3>
+                Laboratório de Ideias <br />
+                <small>
+                  O <b style="color: red;">Vitamina Nerd</b> é um Laboratório de
+                  ideias e realizações que combina produções em diversos
+                  formatos para trazer conteudo original sobre o universo do
+                  entretenimento.
+                </small>
+              </h3>
+            </div>
           </div>
+        </div>
+        <div>
           <basic-elements></basic-elements>
         </div>
       </div>
@@ -28,8 +41,8 @@
           <small-navigation></small-navigation>
         </div>
         <navigation></navigation>
-      </div>
-      <div class="section section-tabs">
+      </div> -->
+      <!-- <div class="section section-tabs">
         <div class="container">
           <tabs></tabs>
         </div>
@@ -279,7 +292,7 @@ export default {
   components: {
     BasicElements
     // Navigation,
-    // SmallNavigation,
+    // SmallNavigation
     // Tabs,
     // NavPills,
     // Notifications,

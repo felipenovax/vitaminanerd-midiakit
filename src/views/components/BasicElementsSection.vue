@@ -1,293 +1,140 @@
 <template>
   <div class="wrapper">
     <div id="buttons">
-      <!-- <div class="title">
-        <h3>
-          Buttons <br />
-          <small>Pick your style</small>
-        </h3>
-      </div>
-      <div class="md-layout">
-        <div class="md-layout-item md-size-66 mx-auto">
-          <md-button class="md-primary">Default</md-button>
-          <md-button class="md-primary md-round">Round</md-button>
-          <md-button class="md-primary"
-            ><md-icon>favorite</md-icon> With Icon</md-button
+      <div class="title members">
+        <section class="container members__body">
+          <div
+            v-for="member in members"
+            :key="member.imgUrl"
+            class="members__body--avatar"
           >
-          <md-button class="md-primary md-just-icon md-round"
-            ><md-icon>favorite</md-icon></md-button
-          >
-          <md-button class="md-primary md-simple">Simple</md-button>
-        </div>
+            <img :src="member.imgUrl" alt="" class="members__body-img" />
+            <p>{{ member.name }}</p>
+          </div>
+        </section>
+        <section>
+          textos
+        </section>
       </div>
-      <div class="title">
-        <h3><small>Pick your size</small></h3>
-      </div>
-      <div class="md-layout">
-        <div class="md-layout-item md-size-66 mx-auto md-xsmall-size-100">
-          <div class="vertical-center">
-            <md-button class="md-primary md-sm">Small</md-button>
-            <md-button class="md-primary">Regular</md-button>
-            <md-button class="md-primary md-lg">Large</md-button>
-          </div>
-        </div>
-      </div>
-      <div class="title">
-        <h3><small>Pick your color</small></h3>
-      </div>
-      <div class="md-layout">
-        <div class="md-layout-item md-size-66 mx-auto">
-          <md-button>Default</md-button>
-          <md-button class="md-primary">Primary</md-button>
-          <md-button class="md-info">Info</md-button>
-          <md-button class="md-success">Success</md-button>
-          <md-button class="md-warning">Warning</md-button>
-          <md-button class="md-danger">Danger</md-button>
-          <md-button class="md-rose">Rose</md-button>
-        </div>
-      </div> 
-    </div>
-    <div class="space-50"></div>
-
-    <div id="inputs">
-      <div class="title">
-        <h3>Inputs</h3>
-      </div>
-      <div class="md-layout">
-        <div
-          class="md-layout-item md-size-25 md-xsmall-size-100 md-small-size-50 md-medium-size-25"
-        >
-          <md-field>
-            <md-input v-model="initial" placeholder="Regular"></md-input>
-          </md-field>
-        </div>
-        <div
-          class="md-layout-item md-size-25 md-xsmall-size-100 md-small-size-50 md-medium-size-25"
-        >
-          <md-field>
-            <label>With Floating Label</label>
-            <md-input v-model="floatingLabel" type="text"></md-input>
-          </md-field>
-        </div>
-        <div
-          class="md-layout-item md-size-25 md-xsmall-size-100 md-small-size-50 md-medium-size-25"
-        >
-          <md-field class="md-valid">
-            <label>Success Input</label>
-            <md-input v-model="success" type="text"></md-input>
-            <md-icon>done</md-icon>
-          </md-field>
-        </div>
-        <div
-          class="md-layout-item md-size-25 md-xsmall-size-100 md-small-size-50 md-medium-size-25"
-        >
-          <md-field class="md-error">
-            <label>Error Input</label>
-            <md-input v-model="error" type="text"></md-input>
-            <md-icon>clear</md-icon>
-          </md-field>
-        </div>
-        <div
-          class="md-layout-item md-size-25 md-xsmall-size-100 md-small-size-50 md-medium-size-25"
-        >
-          <md-field class="md-form-group">
-            <md-icon>face</md-icon>
-            <md-input
-              v-model="withMIcon"
-              placeholder="With Material Icons"
-            ></md-input>
-          </md-field>
-        </div>
-        <div
-          class="md-layout-item md-size-25 md-xsmall-size-100 md-small-size-50 md-medium-size-25"
-        >
-          <md-field class="md-form-group">
-            <i class="fas fa-users"></i>
-            <md-input
-              v-model="withFaIcon"
-              placeholder="With Font Awesome Icons"
-            ></md-input>
-          </md-field>
-        </div>
-      </div>
-    </div>
-
-    <div class="space-50"></div>
-
-    <div id="checkRadios">
-      <div class="md-layout">
-        <div
-          class="md-layout-item md-size-25 md-xsmall-size-100 md-small-size-50 md-medium-size-25"
-        >
-          <div class="title">
-            <h3>Checkboxes</h3>
-          </div>
-          <div class="flex-column">
-            <md-checkbox v-model="checkbox1">Checked</md-checkbox>
-            <md-checkbox v-model="checkbox2">Unchecked</md-checkbox>
-            <md-checkbox v-model="checkbox3" disabled
-              >Disabled Checked</md-checkbox
-            >
-            <md-checkbox v-model="checkbox4" disabled
-              >Disabled Unchecked</md-checkbox
-            >
-          </div>
-        </div>
-        <div
-          class="md-layout-item md-size-25 md-xsmall-size-100 md-small-size-50 md-medium-size-25"
-        >
-          <div class="title">
-            <h3>Radios</h3>
-          </div>
-          <div class="flex-column">
-            <md-radio v-model="radio1" :value="true">Radio is on</md-radio>
-            <md-radio v-model="radio1" :value="false">Radio is off</md-radio>
-            <md-radio v-model="radio2" :value="true" disabled
-              >Disabled Radio is on</md-radio
-            >
-            <md-radio v-model="radio2" :value="false" disabled
-              >Disabled Radio is off</md-radio
-            >
-          </div>
-        </div>
-        <div
-          class="md-layout-item md-size-25 md-xsmall-size-100 md-small-size-50 md-medium-size-25"
-        >
-          <div class="title">
-            <h3>Toggle Buttons</h3>
-          </div>
-          <div class="flex-column">
-            <md-switch v-model="switch1">Toogle is on</md-switch>
-            <md-switch v-model="switch2">Toogle is off</md-switch>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="space-70"></div>
-
-    <div id="progress-pagination">
-      <div class="md-layout">
-        <div class="md-layout-item md-size-50 md-xsmall-size-100">
-          <div class="title">
-            <h3>Progress</h3>
-          </div>
-          <md-progress-bar
-            class="md-primary"
-            :md-value="amount"
-          ></md-progress-bar>
-          <md-progress-bar
-            class="md-info"
-            :md-value="amount2"
-          ></md-progress-bar>
-          <md-progress-bar
-            class="md-warning"
-            md-mode="buffer"
-            :md-value="buffer"
-            :md-buffer="buffer"
-          ></md-progress-bar>
-        </div>
-        <div class="md-layout-item md-size-50 md-xsmall-size-100">
-          <div class="title">
-            <h3>Pagination</h3>
-          </div>
-          <pagination no-arrows v-model="defaultPagination" :page-count="5">
-          </pagination>
-          <pagination
-            class="pagination-info"
-            v-model="infoPagination"
-            with-text
-            :page-count="5"
-          >
-          </pagination>
-        </div>
-      </div>
-    </div>
-
-    <div class="space-50"></div>
-
-    <div id="sliders">
-      <div class="md-layout">
-        <div class="md-layout-item md-size-50 md-xsmall-size-100">
-          <div class="title">
-            <h3>Sliders</h3>
-          </div>
-          <slider v-model="sliders.simple"> </slider>
-
-          <slider v-model="sliders.rangeSlider" type="info" :connect="true">
-          </slider>
-        </div>
-        <div class="md-layout-item md-size-50 md-xsmall-size-100">
-          <div class="title">
-            <h3>Badges</h3>
-          </div>
-          <badge type="default">Default</badge>
-          <badge type="primary">Primary</badge>
-          <badge type="info">Info</badge>
-          <badge type="success">Success</badge>
-          <badge type="warning">Warning</badge>
-          <badge type="danger">Danger</badge>
-          <badge type="rose">Rose</badge>
-        </div>
-      </div> -->
     </div>
   </div>
 </template>
 
 <script>
-import { Pagination } from "@/components";
-import { Slider } from "@/components";
-import { Badge } from "@/components";
-
 export default {
   components: {
-    // Pagination,
-    // Slider,
     // Badge
   },
   data() {
     return {
-      defaultPagination: 3,
-      infoPagination: 3,
-      initial: null,
-      floatingLabel: null,
-      success: null,
-      error: null,
-      withMIcon: null,
-      withFaIcon: null,
-      checkbox1: true,
-      checkbox2: null,
-      checkbox3: true,
-      checkbox4: null,
-      radio1: true,
-      radio2: false,
-      switch1: true,
-      switch2: null,
-      amount: 30,
-      amount2: 60,
-      buffer: 40,
-      sliders: {
-        simple: 40,
-        rangeSlider: [20, 60]
-      }
+      members: [
+        {
+          name: "Felipe Erick",
+          imgUrl:
+            "https://vitaminanerd.com.br/wp-content/uploads/2018/01/20031675_1487525227957897_2100959413562236891_n-1-150x150.jpg"
+        },
+        {
+          name: "Luan Bião",
+          imgUrl:
+            "https://vitaminanerd.com.br/wp-content/uploads/2019/01/luan-150x150.jpg"
+        },
+        {
+          name: "Danilo Alcantara",
+          imgUrl:
+            "https://vitaminanerd.com.br/wp-content/uploads/2020/03/Danilo-Alcantara-Araujo-de-Azevedo-e1585785691274-150x150.jpeg"
+        },
+        {
+          name: "Douglas Euclides",
+          imgUrl:
+            "https://vitaminanerd.com.br/wp-content/uploads/2018/02/P_20180202_124525_1_p-150x150.jpg"
+        },
+        {
+          name: "Douglas MCT",
+          imgUrl:
+            "https://vitaminanerd.com.br/wp-content/uploads/2018/01/douglasmct-36-150x150.jpg"
+        },
+        {
+          name: "Elis Regina",
+          imgUrl:
+            "https://vitaminanerd.com.br/wp-content/uploads/2018/01/elisassuncao-26-150x150.jpg"
+        },
+        {
+          name: "Fernanda Cavalcanti",
+          imgUrl:
+            "https://vitaminanerd.com.br/wp-content/uploads/2018/01/perfil-fernanda-150x150.jpg"
+        },
+        {
+          name: "Marcelo Del Debbio",
+          imgUrl:
+            "https://vitaminanerd.com.br/wp-content/uploads/2018/01/marcelodeldebbio-30-150x150.jpg"
+        },
+        {
+          name: "Marco Bettoni",
+          imgUrl:
+            "https://vitaminanerd.com.br/wp-content/uploads/2018/01/marcobettoni-33-150x150.jpg"
+        },
+        {
+          name: "Paulo Martins",
+          imgUrl:
+            "https://vitaminanerd.com.br/wp-content/uploads/2019/12/paulo-martins-perfil-150x150.png"
+        },
+        {
+          name: "Veri Luna",
+          imgUrl:
+            "https://vitaminanerd.com.br/wp-content/uploads/2018/03/Perfil01-2-150x150.jpg"
+        },
+        {
+          name: "David Almeida",
+          imgUrl:
+            "https://vitaminanerd.com.br/wp-content/uploads/2018/03/Perfil01-2-150x150.jpg"
+        },
+        {
+          name: "William Mendes",
+          imgUrl:
+            "https://vitaminanerd.com.br/wp-content/uploads/2019/12/IMG-20191121-WA0009-150x150.jpg"
+        },
+        {
+          name: "Wislom Almeida",
+          imgUrl:
+            "https://vitaminanerd.com.br/wp-content/uploads/2019/11/Foto-Wislom-Almeida-150x150.jpg"
+        }
+      ]
     };
   }
 };
 </script>
 
-<style lang="scss" scoped>
-.vertical-center {
-  display: flex;
-  align-items: center;
-}
-.flex-column {
-  display: flex;
-  flex-direction: column;
-}
+<style lang="sass" scoped>
+.members
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0) 2%, rgba(255, 255, 255, 1) 100%), url('~@/assets/img/bg-space.jpg')
+  background-size: 100%
+  display: grid
+  grid-template-columns: 1fr 1fr
+  padding: 0px 80px
+
+  &__body
+    display: grid
+    grid-template-columns: repeat(4, 1fr)
+    grid-gap: 8px
+    margin-top: 20px
+    color: white
+
+    &-img
+      width: auto
+      border-radius: 12px
+      box-shadow: 0px -1px 2px rgba(0, 0, 0, 0.2)
+
+.vertical-center
+  display: flex
+  align-items: center
+
+.flex-column
+  display: flex
+  flex-direction: column
+
 .md-checkbox,
-.md-radio {
-  display: flex;
-  margin: 0;
-  margin-bottom: 0.5rem;
-}
+.md-radio
+  display: flex
+  margin: 0
+  margin-bottom: 0.5rem
 </style>

@@ -201,4 +201,8 @@ export default {
 };
 </script>
 
-<style lang="css"></style>
+<style lang="sass">
+.section-navbars
+  background-color: #eee
+  box-shadow: 0px 0.5px 6px rgba(0, 0, 0, 0.12)
+</style>
