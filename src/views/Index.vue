@@ -33,15 +33,25 @@
           </div>
         </div>
         <div>
-          <basic-elements></basic-elements>
+          <WhoWeWare />
         </div>
       </div>
-      <!-- <div class="section section-navbars">
+      <div class="section section-navbars">
         <div class="container">
-          <small-navigation></small-navigation>
+          <div class="title">
+            <h2>Projetos</h2>
+            <div class="title">
+              <h3>
+                O que temos? <br />
+                <small>
+                  texto texto texto texto texto texto texto texto
+                </small>
+              </h3>
+            </div>
+          </div>
         </div>
-        <navigation></navigation>
-      </div> -->
+        <Projects />
+      </div>
       <!-- <div class="section section-tabs">
         <div class="container">
           <tabs></tabs>
@@ -278,8 +288,8 @@
 </template>
 
 <script>
-import BasicElements from "./components/BasicElementsSection";
-import Navigation from "./components/NavigationSection";
+import WhoWeWare from "./components/WhoWeWare";
+import Projects from "./components/Projects";
 import SmallNavigation from "./components/SmallNavigationSection";
 import Tabs from "./components/TabsSection";
 import NavPills from "./components/NavPillsSection";
@@ -290,7 +300,8 @@ import { LoginCard } from "@/components";
 
 export default {
   components: {
-    BasicElements
+    WhoWeWare,
+    Projects
     // Navigation,
     // SmallNavigation
     // Tabs,
